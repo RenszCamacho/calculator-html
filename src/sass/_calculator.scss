@@ -1,0 +1,70 @@
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7rem 1rem;
+}
+
+.box {
+  width: 32.2rem;
+  height: 42rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "display display display display"
+    "clear clear reset division"
+    "seven eight nine multiplier"
+    "four five six substraction"
+    "one two three add"
+    "zero zero comma equal";
+
+  &__display {
+    grid-area: display;
+    background-color: $brand-100;
+    color: white;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__result {
+    width: 100%;
+    text-align: right;
+    font-size: 6rem;
+    padding-right: 1rem;
+  }
+
+  &__AC {
+    grid-area: clear;
+  }
+
+  &__number--zero {
+    grid-area: zero;
+    border-bottom-left-radius: 0.5rem;
+  }
+
+  &__equal {
+    border-bottom-right-radius: 0.5rem;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  overflow: hidden;
+  margin: -1px;
+  padding: 0;
+}
+
+#division,
+#multiplier,
+#substraction,
+#add,
+#equal {
+  background-color: $brand-300;
+  color: white;
+}
