@@ -205,6 +205,12 @@ var add = document.getElementById("add");
 var equal = document.getElementById("equal");
 var comma = document.getElementById("comma");
 var numbers = document.querySelectorAll(".box__number");
+numbers.forEach(function (number) {
+  return number.addEventListener("click", function (e) {
+    var target = e.target;
+    console.log(target.value);
+  });
+});
 },{}],"index.ts":[function(require,module,exports) {
 "use strict";
 
@@ -245,7 +251,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51315" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58659" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

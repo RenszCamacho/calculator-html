@@ -7,3 +7,10 @@ const add = document.getElementById("add");
 const equal = document.getElementById("equal");
 const comma = document.getElementById("comma");
 const numbers = document.querySelectorAll(".box__number");
+
+numbers.forEach((number) =>
+  number.addEventListener("click", (e) => {
+    const target = e.target as HTMLInputElement;
+    console.log(target.value);
+  })
+);

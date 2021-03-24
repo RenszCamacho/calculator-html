@@ -26,7 +26,8 @@ img {
   width: 100%;
 }
 
-button {
+button,
+input {
   border: 1px solid $brand-400;
   background-color: $brand-200;
   outline: none;
