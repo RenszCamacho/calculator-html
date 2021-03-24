@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/5c59843ad4.js" crossorigin="anonymous"></script>
-  <script defer src="./index.ts"></script>
+  <script defer src="./index.js"></script>
 </head>
 
 <body>
@@ -22,7 +22,7 @@
     <article class="box">
 
       <div class="box__display">
-        <div class="box__result">0</div>
+        <div class="box__result"></div>
       </div>
 
       <!-- FIRST LINE -->
@@ -32,7 +32,7 @@
         <i class="fas fa-redo"></i>
       </button>
 
-      <button id="division" class="box__division" type="button" aria-label="division">
+      <button id="division" class="box__operator" type="button" aria-label="division">
         <i class="fas fa-divide"></i>
       </button>
 
@@ -49,7 +49,7 @@
         9
      </button>
 
-      <button id="multiplier" class="box__multiplier" type="button" aria-label="multiplier">
+      <button id="multiplier" class="box__operator" type="button" aria-label="multiplier">
         <i class="fas fa-times"></i>
       </button>
 
@@ -66,7 +66,7 @@
         6
       </button>
 
-      <button id="substraction" class="box__substraction" type="button" aria-label="substraction">
+      <button id="substraction" class="box__operator" type="button" aria-label="substraction">
         <i class="fas fa-minus"></i>
       </button>
 
@@ -83,7 +83,7 @@
         3
       </button>
 
-      <button id="add" class="box__add" type="button" aria-label="add">
+      <button id="add" class="box__operator" type="button" aria-label="add">
         <i class="fas fa-plus"></i>
       </button>
 
@@ -92,7 +92,7 @@
         0
       </button>
 
-      <button id="comma" class="box__comma" type="button" aria-label="comma">,</button>
+      <button id="comma" class="box__number" type="button" aria-label="comma" value=",">,</button>
 
       <button id="equal" class="box__equal" type="button" aria-label="equal">
         <i class="fas fa-equals"></i>
