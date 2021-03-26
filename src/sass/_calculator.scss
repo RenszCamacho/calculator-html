@@ -31,8 +31,6 @@
   }
 
   &__result {
-    // width: 100%;
-    // height: 100%;
     text-align: right;
     font-size: 3rem;
     word-wrap: break-word;
@@ -63,6 +61,10 @@
   overflow: hidden;
   margin: -1px;
   padding: 0;
+}
+
+.fas {
+  font-size: 2rem;
 }
 
 #division,
