@@ -29,9 +29,38 @@ const appendNumber = (number: string): void => {
 const chooseOperation = (operatorButton: string): void => {
   if (currentOperand === "") return;
   if (previousOperand !== "") {
-    // compute();
+    compute();
   }
   operation = operatorButton;
   previousOperand = currentOperand;
   currentOperand = "";
+};
+
+const compute = (): void => {
+  let result: number;
+  const prev = parseFloat(previousOperand);
+  const current = parseFloat(currentOperand);
+  if (isNaN(prev) || isNaN(current)) return;
+  switch (operation) {
+    case "+":
+      result = prev + current;
+      break;
+    case "-":
+      result = prev - current;
+      break;
+    case "x":
+      result = prev * current;
+      break;
+    case "÷":
+      result = prev / current;
+      break;
+    default:
+      return;
+  }
+  // Number.isInteger(result)
+  //   ? (currentOperand = result)
+  //   : (currentOperand = result.toFixed(1));
+  previousOperand = "";
+  currentOperand = result;
+  operation = undefined;
 };
