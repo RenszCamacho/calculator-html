@@ -132,3 +132,13 @@ const clickDeleteButton = (): void => {
     updateDisplay();
   });
 };
+
+const runCalculator = (): void => {
+  clickNumberButton();
+  clickOperatorsButton();
+  clickEqualsButton();
+  clickAllClearButton();
+  clickDeleteButton();
+};
+
+runCalculator();
