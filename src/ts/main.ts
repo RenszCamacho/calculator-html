@@ -118,3 +118,17 @@ const clickEqualsButton = (): void => {
     updateDisplay();
   });
 };
+
+const clickAllClearButton = (): void => {
+  allClearButton.addEventListener("click", () => {
+    clear();
+    updateDisplay();
+  });
+};
+
+const clickDeleteButton = (): void => {
+  deleteButton.addEventListener("click", () => {
+    deleteNumber();
+    updateDisplay();
+  });
+};
