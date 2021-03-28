@@ -14,3 +14,24 @@ const clear = (): void => {
   previousOperand = "";
   operation = undefined;
 };
+
+const deleteNumber = (): void => {
+  currentOperand = currentOperand.toString().slice(0, -1);
+};
+
+//Resvisalo luego para retirar el .toString()
+const appendNumber = (number: string): void => {
+  if (number === "." && currentOperand.includes(".")) return;
+  currentOperand = currentOperand.toString() + number.toString();
+};
+
+//No olvidar descomentar la funcion compute()
+const chooseOperation = (operatorButton: string): void => {
+  if (currentOperand === "") return;
+  if (previousOperand !== "") {
+    // compute();
+  }
+  operation = operatorButton;
+  previousOperand = currentOperand;
+  currentOperand = "";
+};
