@@ -1,13 +1,7 @@
-import { allClear } from "../ts/allClear";
-import { deleteCurrent } from "../ts/reset";
-import { appendNumber } from "../ts/appendNumber";
-import { compute } from "../ts/compute";
-import { updateDisplay } from "../ts/updateDisplay";
+const numberButtons = document.querySelectorAll(".box__number");
+const operationButtons = document.querySelectorAll(".box__operator");
+const equalsButton = document.querySelector("#equal");
+const deleteButton = document.querySelector("#reset");
+const allClearButton = document.querySelector("#AC");
+const previousOperandTextElement = document.querySelector(".box__previousNum");
 
-const buttonNumber = document.querySelectorAll(".box__number");
-const buttonOperator = document.querySelectorAll(".box__operator");
-const equal = document.getElementById("equal");
-const reset = document.getElementById("reset");
-const AC = document.getElementById("AC");
-const previousDisplay = document.querySelector(".box__previousNum");
-const currentDisplay = document.querySelector(".box__currentNum");
