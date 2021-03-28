@@ -4,6 +4,7 @@ const equalsButton = document.querySelector("#equal");
 const deleteButton = document.querySelector("#reset");
 const allClearButton = document.querySelector("#AC");
 const previousOperandTextElement = document.querySelector(".box__previousNum");
+const currentOperandTextElement = document.querySelector(".box__currentNum");
 
 let currentOperand: string = "";
 let previousOperand: string = "";
@@ -25,7 +26,6 @@ const appendNumber = (number: string): void => {
   currentOperand = currentOperand.toString() + number.toString();
 };
 
-//No olvidar descomentar la funcion compute()
 const chooseOperation = (operatorButton: string): void => {
   if (currentOperand === "") return;
   if (previousOperand !== "") {
@@ -37,7 +37,7 @@ const chooseOperation = (operatorButton: string): void => {
 };
 
 const compute = (): void => {
-  let result: number;
+  let result: any;
   const prev = parseFloat(previousOperand);
   const current = parseFloat(currentOperand);
   if (isNaN(prev) || isNaN(current)) return;
@@ -63,4 +63,32 @@ const compute = (): void => {
   previousOperand = "";
   currentOperand = result;
   operation = undefined;
+};
+
+const getDisplayNumber = (number: string): string => {
+  const stringNumber = number.toString();
+  const integerDigits = parseFloat(stringNumber.split(".")[0]);
+  const decimalDigits = stringNumber.split(".")[1];
+  let integerDisplay: string;
+  if (isNaN(integerDigits)) {
+    integerDisplay = "";
+  } else {
+    integerDisplay = integerDigits.toLocaleString("en");
+  }
+  if (decimalDigits !== undefined) {
+    return `${integerDisplay}.${decimalDigits}`;
+  } else {
+    return integerDisplay;
+  }
+};
+
+const updateDisplay = (): void => {
+  const currentOperandAsHTMLElement = currentOperandTextElement as HTMLElement;
+  currentOperandAsHTMLElement.innerText = currentOperand;
+  if (operation !== undefined) {
+    currentOperandAsHTMLElement.innerText = `${previousOperand} ${operation}`;
+  } else {
+    currentOperandAsHTMLElement.innerText = "";
+  }
+  // previousOperandTextElement.innerText = previousOperand;
 };
