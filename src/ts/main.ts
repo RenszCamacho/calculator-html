@@ -20,7 +20,6 @@ const deleteNumber = (): void => {
   currentOperand = currentOperand.toString().slice(0, -1);
 };
 
-//Resvisalo luego para retirar el .toString()
 const appendNumber = (number: string): void => {
   if (number === "." && currentOperand.includes(".")) return;
   currentOperand = currentOperand.toString() + number.toString();
@@ -83,12 +82,15 @@ const getDisplayNumber = (number: string): string => {
 };
 
 const updateDisplay = (): void => {
+  const previousOperandAsHtmlElement = previousOperandTextElement as HTMLElement;
   const currentOperandAsHtmlElement = currentOperandTextElement as HTMLElement;
-  currentOperandAsHtmlElement.innerText = currentOperand;
+  currentOperandAsHtmlElement.innerText = getDisplayNumber(currentOperand);
   if (operation !== undefined) {
-    currentOperandAsHtmlElement.innerText = `${previousOperand} ${operation}`;
+    previousOperandAsHtmlElement.innerText = `${getDisplayNumber(
+      previousOperand
+    )} ${operation}`;
   } else {
-    currentOperandAsHtmlElement.innerText = "";
+    previousOperandAsHtmlElement.innerText = "";
   }
 };
 
