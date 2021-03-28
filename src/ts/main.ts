@@ -83,12 +83,62 @@ const getDisplayNumber = (number: string): string => {
 };
 
 const updateDisplay = (): void => {
-  const currentOperandAsHTMLElement = currentOperandTextElement as HTMLElement;
-  currentOperandAsHTMLElement.innerText = currentOperand;
+  const currentOperandAsHtmlElement = currentOperandTextElement as HTMLElement;
+  currentOperandAsHtmlElement.innerText = currentOperand;
   if (operation !== undefined) {
-    currentOperandAsHTMLElement.innerText = `${previousOperand} ${operation}`;
+    currentOperandAsHtmlElement.innerText = `${previousOperand} ${operation}`;
   } else {
-    currentOperandAsHTMLElement.innerText = "";
+    currentOperandAsHtmlElement.innerText = "";
   }
-  // previousOperandTextElement.innerText = previousOperand;
 };
+
+const clickNumberButton = (): void => {
+  numberButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      let buttonAsHtmlElement = button as HTMLElement;
+      appendNumber(buttonAsHtmlElement.innerText);
+      updateDisplay();
+    });
+  });
+};
+
+const clickOperatorsButton = (): void => {
+  operationButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      let buttonAsHtmlElement = button as HTMLElement;
+      chooseOperation(buttonAsHtmlElement.innerText);
+      updateDisplay();
+    });
+  });
+};
+
+const clickEqualsButton = (): void => {
+  equalsButton.addEventListener("click", () => {
+    compute();
+    updateDisplay();
+  });
+};
+
+const clickAllClearButton = (): void => {
+  allClearButton.addEventListener("click", () => {
+    clear();
+    updateDisplay();
+  });
+};
+
+const clickDeleteButton = (): void => {
+  deleteButton.addEventListener("click", () => {
+    deleteNumber();
+    updateDisplay();
+  });
+};
+
+const runCalculator = (): void => {
+  clickNumberButton();
+  clickOperatorsButton();
+  clickEqualsButton();
+  clickAllClearButton();
+  clickDeleteButton();
+};
+
+runCalculator();
