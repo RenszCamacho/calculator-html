@@ -56,9 +56,12 @@ const compute = (): void => {
     default:
       return;
   }
-  // Number.isInteger(result)
-  //   ? (currentOperand = result)
-  //   : (currentOperand = result.toFixed(1));
+  parseFloat(result);
+  if (Number.isInteger(result)) {
+    result;
+  } else {
+    result = Math.round(result * 1000) / 1000;
+  }
   previousOperand = "";
   currentOperand = result;
   operation = undefined;

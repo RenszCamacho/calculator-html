@@ -259,10 +259,15 @@ var compute = function compute() {
 
     default:
       return;
-  } // Number.isInteger(result)
-  //   ? (currentOperand = result)
-  //   : (currentOperand = result.toFixed(1));
+  }
 
+  parseFloat(result);
+
+  if (Number.isInteger(result)) {
+    result;
+  } else {
+    result = Math.round(result * 1000) / 1000;
+  }
 
   previousOperand = "";
   currentOperand = result;
@@ -390,7 +395,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55748" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54529" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
