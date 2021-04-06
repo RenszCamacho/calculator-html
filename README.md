@@ -2,6 +2,10 @@
 
 - This a basic calculator, made of Html, Sass and Typescript.
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4cd9465b-ffd9-42c1-8343-07e7730235d8/deploy-status)](https://app.netlify.com/sites/skylab-calculator/deploys)
+
+[Skylab Calculator-Html](https://skylab-calculator.netlify.app/)
+
 ### Clone the repository
 
 ### Install the dependencies
